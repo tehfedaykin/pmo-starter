@@ -19,6 +19,7 @@ import { MenuItemsComponent } from './order/menu-items/menu-items.component';
 import { OrderTotalPipe } from './order-total.pipe';
 import { HistoryComponent } from './order/history/history.component';
 import { ListComponent } from './order/list/list.component';
+import { ScullyLibModule } from '@scullyio/ng-lib';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ListComponent } from './order/list/list.component';
     HttpClientModule,
     ReactiveFormsModule,
     TabsModule.forRoot(),
-    SocketIoModule.forRoot(config)
+    SocketIoModule.forRoot(config),
+    ScullyLibModule
   ],
   providers: [ImageUrlPipe, OrderTotalPipe],
   bootstrap: [AppComponent]
