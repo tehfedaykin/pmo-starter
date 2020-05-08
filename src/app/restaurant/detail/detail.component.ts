@@ -30,14 +30,14 @@ export class DetailComponent implements OnInit {
           map((res) => {
             return {
               value: res,
-              isLoading: true
+              isLoading: false
             }
           })
         )
       }),
       startWith({
         value: null,
-        isLoading: false
+        isLoading: true
       })
     )
   }
