@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ImageUrlPipe } from 'src/app/image-url.pipe';
+import { ImageUrlPipe } from 'src/app/restaurant/image-url.pipe';
 import { Observable } from 'rxjs';
 import { Restaurant } from '../restaurant';
 import { RestaurantService } from '../restaurant.service';
@@ -30,14 +30,14 @@ export class DetailComponent implements OnInit {
           map((res) => {
             return {
               value: res,
-              isLoading: true
+              isLoading: false
             }
           })
         )
       }),
       startWith({
         value: null,
-        isLoading: false
+        isLoading: true
       })
     )
   }

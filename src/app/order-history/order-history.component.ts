@@ -1,21 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Order, OrderService } from '../order.service';
-import { OrderState } from '../state.service';
+import { OrderState } from '../shared/state.service';
+import { OrderService, Order } from '../shared/order.service';
 import { Socket } from 'ngx-socket-io';
 
 @Component({
-  selector: 'pmo-history',
-  templateUrl: './history.component.html',
-  styleUrls: ['./history.component.less']
+  selector: 'pmo-order-history',
+  templateUrl: './order-history.component.html',
+  styleUrls: ['./order-history.component.less']
 })
-export class HistoryComponent implements OnInit {
+export class OrderHistoryComponent implements OnInit {
   public orderState$: Observable<OrderState>;
 
-  constructor(
-    private orderService: OrderService,
-    private socket: Socket
-  ) {}
+  constructor(private orderService: OrderService, private socket: Socket) { }
 
   ngOnInit(): void {
     this.orderState$ = this.orderService.orderState$;
@@ -37,4 +34,5 @@ export class HistoryComponent implements OnInit {
   filter(orders: Order[], status: string): Order[] {
     return orders.filter(order => order.status === status);
   }
+
 }

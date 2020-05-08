@@ -41,8 +41,7 @@ export class RestaurantComponent implements OnInit {
       startWith({
         value: [],
         isPending: true
-      }),
-      tap((val) => console.log('states', val))
+      })
     );
 
     this.cities$ = this.form.get('state').valueChanges.pipe(

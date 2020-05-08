@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, AbstractControl } from '@angular/forms';
 
-import { RestaurantService } from '../restaurant/restaurant.service';
-import { Restaurant } from '../restaurant/restaurant';
-import { OrderService, Item } from './order.service';
+import { Restaurant } from '../restaurant';
+import { OrderService, Item } from '../../shared/order.service';
 import { switchMap, map, startWith, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { OrderTotalPipe } from '../order-total.pipe';
-import { NewOrderState } from './state.service';
+import { OrderTotalPipe } from '../../shared/order-total.pipe';
+import { NewOrderState } from '../../shared/state.service';
+import { RestaurantService } from '../restaurant.service';
 
 
 function minLengthArray(min: number) {

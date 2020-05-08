@@ -1,6 +1,6 @@
 import { Component, Input, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { Item } from '../order.service';
+import { Item } from '../../../shared/order.service';
 
 @Component({
   selector: 'pmo-menu-items',
