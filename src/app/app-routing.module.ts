@@ -21,7 +21,7 @@ const routes: Routes = [
     component: DetailComponent,
   },
   {
-    path: 'restaurants/:slug/:order',
+    path: 'restaurants/:slug/order',
     component: OrderComponent,
   },
   {
